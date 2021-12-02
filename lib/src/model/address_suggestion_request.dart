@@ -65,6 +65,9 @@ class AddressSuggestionRequest {
     _lowerBoundary = null;
   }
 
+  @JsonKey(name: 'restrict_value')
+  bool restrictValue;
+
   ///AddressSuggestionRequest represents an serializable object
   ///used to perform suggestion queries.
   ///[query] is required field.
@@ -78,6 +81,7 @@ class AddressSuggestionRequest {
     this.locationsPriority,
     LevelBoundry upperBoundary,
     LevelBoundry lowerBoundary,
+    this.restrictValue = false
   })  : this._upperBoundary = upperBoundary,
         this._lowerBoundary = lowerBoundary;
 
